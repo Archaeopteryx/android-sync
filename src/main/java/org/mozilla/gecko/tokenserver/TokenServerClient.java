@@ -21,7 +21,7 @@ import org.mozilla.gecko.sync.UnexpectedJSONException.BadRequiredFieldJSONExcept
 import org.mozilla.gecko.sync.net.AuthHeaderProvider;
 import org.mozilla.gecko.sync.net.BaseResource;
 import org.mozilla.gecko.sync.net.BaseResourceDelegate;
-import org.mozilla.gecko.sync.net.BrowserIDAuthHeaderProvider;
+import org.mozilla.gecko.sync.net.BearerAuthHeaderProvider;
 import org.mozilla.gecko.sync.net.SyncResponse;
 import org.mozilla.gecko.tokenserver.TokenServerException.TokenServerConditionsRequiredException;
 import org.mozilla.gecko.tokenserver.TokenServerException.TokenServerInvalidCredentialsException;
@@ -301,7 +301,7 @@ public class TokenServerClient {
 
     @Override
     public AuthHeaderProvider getAuthHeaderProvider() {
-      return new BrowserIDAuthHeaderProvider(assertion);
+      return new BearerAuthHeaderProvider(assertion);
     }
 
     @Override
